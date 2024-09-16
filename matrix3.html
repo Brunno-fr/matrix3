@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Theme Site</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h1, p {
+            text-shadow: 0 0 5px green;
+        }
+
+        #matrixImage {
+            border: 3px solid green;
+        }
+
+        .btn-danger, .btn-primary {
+            font-size: 0.9rem; /* Reduced the font size */
+            width: 150px;
+            height: 50px;
+            margin: 10px;
+        }
+
+        .btn-danger:hover, .btn-primary:hover {
+            transform: scale(1.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hide the video by default */
+        #redPillVideo {
+            display: none;
+            margin-top: 20px;
+        }
+
+        /* Flexbox to center video */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-black">
+        <div class="container-fluid">
+            <a class="navbar-brand text-success" href="#">Matrix World</a>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <div class="container text-center mt-5">
+        <h1 class="text-success">Welcome to the Matrix</h1>
+        <p class="text-light">Choose your destiny...</p>
+
+        <!-- Matrix-themed image space -->
+        <div class="image-placeholder mt-4">
+            <img src="1595982725012.jpeg" class="img-fluid" alt="Matrix" id="matrixImage">
+        </div>
+
+        <!-- Pills -->
+        <div class="mt-4">
+            <button class="btn btn-primary" id="bluePill">Blue Pill</button> <!-- Blue Pill on the left -->
+            <button class="btn btn-danger" id="redPill">Red Pill</button> <!-- Red Pill on the right -->
+        </div>
+    </div>
+
+    <!-- Easter Egg Message -->
+    <div class="container text-center mt-5">
+        <p class="text-light" id="pillMessage" style="display:none;"></p>
+    </div>
+
+    <!-- Red Pill Video Section -->
+    <div class="container video-container">
+        <video id="redPillVideo" width="640" height="360" controls>
+            <source src="BROCASITO - “O ESCOLHIDO” Feat. TETO (Official Visualizer).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        document.getElementById('redPill').addEventListener('click', function() {
+            document.getElementById('pillMessage').style.display = 'block';
+            document.getElementById('pillMessage').innerText = 'Welcome to the real world...';
+            document.getElementById('pillMessage').style.color = 'red';
+            
+            // Display the video after clicking the red pill
+            document.getElementById('redPillVideo').style.display = 'block';
+        });
+
+        document.getElementById('bluePill').addEventListener('click', function() {
+            document.getElementById('pillMessage').style.display = 'block';
+            document.getElementById('pillMessage').innerText = 'The story ends, you wake up in your bed and believe whatever you want to believe...';
+            document.getElementById('pillMessage').style.color = 'blue';
+
+            // Redireciona para outro site após 2 segundos
+            setTimeout(function() {
+                window.location.href = 'https://www.example.com';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
